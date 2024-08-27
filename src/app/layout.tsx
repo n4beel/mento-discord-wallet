@@ -1,5 +1,3 @@
-
-// app/layout.tsx
 import './globals.css'
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
@@ -7,7 +5,7 @@ import { headers } from 'next/headers'
 import { cookieToInitialState } from 'wagmi'
 
 import { config } from '@/config'
-import Web3ModalProvider from '@/context'
+import AppKitProvider from '@/context'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -23,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Web3ModalProvider initialState={initialState}>{children}</Web3ModalProvider>
+        <AppKitProvider initialState={initialState}>{children}</AppKitProvider>
       </body>
     </html>
   )
